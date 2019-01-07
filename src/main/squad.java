@@ -3,12 +3,13 @@ package main;
 import Exceptions.NotinSquad;
 import Exceptions.SwitchPlayerException;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 
-public class squad {
+public class squad implements Serializable{
     private int MAXGK= 1;
     private int MAXD = 5;
     private int MAXM = 5;
@@ -51,7 +52,7 @@ public class squad {
         int pos= player.getPosNum();
         if (squad.size()<MAXSQUAD){
             squad.add(player);
-
+//need to add something that prevents adding 10 midfielders for example
             if (formation.get(pos).size()<initialmaxPos(pos)){
                 formation.get(pos).add(player);
             } else{

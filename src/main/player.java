@@ -1,6 +1,8 @@
 package main;
 
-public class player {
+import java.io.Serializable;
+
+public class player implements Serializable{
 
     private String name;
     private String Position;
